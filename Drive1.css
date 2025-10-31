@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:#CACACA;
+}
+
+.title-bar {
+    background: lightblue;
+    color: white;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-bar h1 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.window-controls button {
+    width: 30px;
+    height: 22px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 0px;
+}
+
+nav a:hover {
+    color: #00b8d4;
+    cursor: default;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px;
+    background: white;
+    border: 2px solid black;
+}
+
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    margin: 20px
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    left: 60px;
+    color: white;
+}
+
+.hero-text .small {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.hero-text h2 {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+}
+
+.hero-text .subtitle {
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #00D9FF;
+    color: #000;
+    border: none;
+    padding: 12px 35px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #00b8d4;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px 0 25px 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.possibilities-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    padding: 0 40px 60px 40px;
+}
+
+.card {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+    padding: 20px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.card-button {
+    background-color: #00D9FF;
+    color: #000;
+    border: none;
+    padding: 6px 14px;
+    cursor: default;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.card-button::after {
+    content: ' →';
+}
+
+.card-button:hover {
+    background-color: #00b8d4;
+}
+
+.stories-section {
+    margin: 20px;
+    padding: 60px 40px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: 20px;
+}
+
+
+.story-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border: 1px solid black;
+}
+
+.story-card.featured {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+}
+
+.story-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: white;
+    color: #000;
+}
+
+.story-overlay h3 {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    color: #000;
+}
+
+.story-overlay .date {
+    font-size: 10px;
+    margin: 0;
+    color: #666;
+}
+
+.contact-section {
+    background: #2a2a2a;
+    color: white;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contact-info h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: white;
+    margin-top: 8px;
+}
+
+.contact-details {
+    margin-top: 40px;
+    line-height: 2.2;
+    color: #ccc;
+}
+
+.contact-details p {
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.form-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.form-section h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: white;
+    margin-top: 8px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    border: 1px solid #555;
+    color: white;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #00D9FF;
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group label {
+    font-size: 11px;
+    color: #999;
+    cursor: pointer;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #555;
+    border: 1px solid #666;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background-color: #00D9FF;
+    border-color: #00D9FF;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.submit-button {
+    background-color: #00D9FF;
+    color: #000;
+    border: none;
+    padding: 12px 35px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+.submit-button:hover {
+    background-color: #00b8d4;
+}
+
+@media (max-width: 1200px) {
+    .possibilities-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .stories-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+    .story-card.featured {
+        grid-row: auto;
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .hero-text h2 {
+        font-size: 48px;
+    }
+    .hero-text {
+        left: 30px;
+    }
+    .section-title {
+        margin-left: 20px;
+    }
+    .possibilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px 40px 20px;
+    }
+    .stories-section {
+        padding: 40px 20px;
+    }
+    .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .story-card.featured {
+        grid-column: span 2;
+    }
+    nav {
+        padding: 10px 20px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    .hero-text .small {
+        font-size: 16px;
+    }
+    .hero-text .subtitle {
+        font-size: 14px;
+    }
+}
